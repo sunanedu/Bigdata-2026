@@ -1,0 +1,4 @@
+*.db
+*.csv
+reports/*.html
+exports/*

@@ -1,0 +1,29 @@
+Lab หน่วยที่ 2 — SQL สำหรับจัดการข้อมูลขนาดใหญ่
+============================================
+
+สิ่งที่สร้าง
+------------
+Lab 2.1  DDL & DML (students)     — workshop.sql, exercises, solutions
+Lab 2.2  SELECT ขั้นสูง           — วิเคราะห์ road_accidents
+Lab 2.3  JOIN 3 ตาราง            — school_join.db
+Lab 2.4  VIEW, INDEX, TRANSACTION
+Lab 2.5  Python Pipeline        — export CSV/JSON
+
+วิธีรัน
+-------
+cd C:\Users\ADMIN\Documents\GitHub\Bigdata-2026\Lab\Lab-2
+python setup_lab.py
+
+ไฟล์ใน output/
+  ddl_students.db    — Lab 2.1
+  road_accidents.db  — Lab 2.2, 2.4, 2.5 (20,000 แถว)
+  school_join.db     — Lab 2.3
+  bank_demo.db       — Lab 2.4 TRANSACTION
+
+Python Pipeline (Lab 2.5)
+  pip install pandas
+  python Lab2-5_python_pipeline/pipeline.py
+  → ผลลัพธ์ใน output/exports/
+
+คู่มือเต็ม: Lab/Lab-2/README.md
+เอกสารอ้างอิง: หน่วยที่2_SQL_สำหรับจัดการข้อมูลขนาดใหญ่.md

@@ -1,0 +1,30 @@
+Lab หน่วยที่ 3 — คุณภาพข้อมูลและการตรวจสอบ
+============================================
+
+สิ่งที่สร้าง
+------------
+Lab 3.1  แบบฝึก 6 มิติคุณภาพข้อมูล
+Lab 3.2  SQL ตรวจสอบ 10 ข้อ + dirty_records
+Lab 3.3  Pandas ทำความสะอาด
+Lab 3.4  รายงาน DQ (HTML) + เปรียบเทียบก่อน/หลัง
+
+วิธีรัน
+-------
+cd C:\Users\ADMIN\Documents\GitHub\Bigdata-2026\Lab\Lab-3
+python setup_lab.py
+
+ไฟล์หลัก
+  output/road_accidents.db   — SQL ตรวจสอบ (20,000 แถว)
+  data/dirty_records.csv     — ข้อมูลสกปรกสำหรับฝึก
+  output/dirty_records.db      — import แล้ว ใช้ใน DB Browser
+
+Lab 3.3
+  pip install pandas
+  python Lab3-3_pandas_cleaning/clean_dirty_records.py
+  python Lab3-3_pandas_cleaning/clean_road_accidents.py
+
+Lab 3.4
+  python Lab3-4_dq_report/generate_dq_report.py
+  python Lab3-4_dq_report/compare_before_after.py
+
+คู่มือเต็ม: Lab/Lab-3/README.md

@@ -1,0 +1,35 @@
+สิ่งที่สร้าง
+Lab	เนื้อหา (อ้างอิงเอกสาร)
+Lab 1.1
+แบบฝึก 5V — Lab1-1_5V_worksheet.md
+Lab 1.2
+ฐานข้อมูลแรก students — SQL + my_first_database.db
+Lab 1.3
+ERD ร้านป้าแดง 4 ตาราง — erd_shop.txt, schema, seed
+Lab 1.4
+นำเข้า CSV + verify.sql + สคริปต์ Python
+ไฟล์ข้อมูล: data/students.csv (20 แถว), data/products.csv
+คู่มือหลัก: Lab/Lab-1/README.md
+
+วิธีรัน
+cd C:\Users\ADMIN\Documents\GitHub\Bigdata-2026\Lab\Lab-1
+python setup_lab.py
+รันแล้วได้ฐานข้อมูลใน output/:
+
+my_first_database.db — ตาราง students (5 แถวตัวอย่าง)
+shop_database.db — customers, products, orders, order_items
+school_system.db — students + subjects + enrollments (เตรียมหน่วยที่ 2)
+road_accidents.db — 20,000 แถว จาก data/thailand_road_accidents_2568.csv (ตรงกับเอกสาร: ผู้เสียชีวิต 471, ผู้บาดเจ็บ 20,573)
+เปิดด้วย DB Browser for SQLite หรือรัน SQL ใน Lab1-4_csv_import/verify.sql
+
+โครงสร้าง
+Lab/Lab-1/
+├── README.md
+├── setup_lab.py
+├── data/ (students.csv, products.csv)
+├── Lab1-1_5V_worksheet.md
+├── Lab1-2_first_database/
+├── Lab1-3_shop_erd/
+├── Lab1-4_csv_import/
+└── output/          ← สร้างโดย setup_lab.py (*.db ไม่ commit)
+ถ้าต้องการให้ช่วยทำ Lab หน่วยที่ 2 หรือเพิ่มแบบทดสอบ/เฉลย บอกได้เลย

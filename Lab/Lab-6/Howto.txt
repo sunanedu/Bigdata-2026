@@ -1,0 +1,27 @@
+Lab 6 — Mini Project Dashboard HTML
+=====================================
+
+1. cd Lab\Lab-6
+2. python setup_lab.py
+3. pip install flask
+
+Lab 6.1 — ทำ Lab6-1_architecture\architecture_worksheet.md (วาด Wireframe)
+
+Lab 6.2 — Flask เบื้องต้น:
+  python Lab6-2_flask\hello_flask.py     → http://127.0.0.1:5001
+
+Lab 6.3–6.4 — Mini Project (Dashboard เต็ม):
+  cd Lab6-mini_project
+  python app.py                          → http://127.0.0.1:5000
+
+ทดสอบ API ไม่เปิดเบราว์เซอร์:
+  python Lab6-2_flask\test_api.py
+
+Lab 6.5 — เตรียมนำเสนอ:
+  Lab6-5_presentation\presentation_outline.md
+  Lab6-5_presentation\rubric_checklist.md
+
+หมายเหตุ:
+  - school_data.db มี road_accidents + students/subjects/enrollments
+  - ถ้าไม่มี chart.min.js ให้รัน setup_lab.py อีกครั้ง (ต้องมีอินเทอร์เน็ต)
+    หรือคัดลอกจากแฟลชไดร์ฟไป Lab6-mini_project\static\

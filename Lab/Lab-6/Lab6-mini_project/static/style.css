@@ -1,0 +1,193 @@
+/* Dashboard อุบัติเหตุทางถนน — Lab 6 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.dashboard-header {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1);
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.dashboard-header p {
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+.kpi-section {
+    display: flex;
+    gap: 20px;
+    padding: 25px 30px;
+    flex-wrap: wrap;
+}
+
+.kpi-card {
+    flex: 1;
+    min-width: 180px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #1a73e8;
+}
+
+.kpi-card.danger  { border-left-color: #e53935; }
+.kpi-card.warning { border-left-color: #fb8c00; }
+.kpi-card.info    { border-left-color: #00897b; }
+
+.kpi-icon  { font-size: 2rem; margin-bottom: 8px; }
+.kpi-value { font-size: 2rem; font-weight: bold; color: #1a73e8; }
+.kpi-card.danger  .kpi-value { color: #e53935; }
+.kpi-card.warning .kpi-value { color: #fb8c00; }
+.kpi-card.info    .kpi-value { color: #00897b; }
+.kpi-label { font-size: 0.85rem; color: #666; margin-top: 5px; }
+
+.charts-row {
+    display: flex;
+    gap: 20px;
+    padding: 0 30px 20px;
+    flex-wrap: wrap;
+}
+
+.chart-card {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.chart-card h2 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #444;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 10px;
+}
+
+.chart-full {
+    padding: 0 30px 20px;
+}
+
+.chart-full .chart-card {
+    width: 100%;
+}
+
+.table-section {
+    padding: 0 30px 30px;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.table-header h2 {
+    font-size: 1rem;
+    color: #444;
+}
+
+.table-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.table-controls input,
+.table-controls select {
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.table-controls input {
+    width: 200px;
+}
+
+.table-controls button {
+    padding: 8px 16px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.table-controls button:hover {
+    background: #1557b0;
+}
+
+.table-wrapper {
+    background: white;
+    border-radius: 12px;
+    overflow-x: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+thead th {
+    background: #1a73e8;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+tbody td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+tbody tr:hover {
+    background: #f8f9ff;
+}
+
+.severity-เสียชีวิต { color: #e53935; font-weight: bold; }
+.severity-บาดเจ็บสาหัส { color: #fb8c00; font-weight: bold; }
+.severity-บาดเจ็บเล็กน้อย { color: #43a047; font-weight: bold; }
+
+@media (max-width: 768px) {
+    .kpi-section,
+    .charts-row {
+        flex-direction: column;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .kpi-section,
+    .charts-row,
+    .chart-full,
+    .table-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

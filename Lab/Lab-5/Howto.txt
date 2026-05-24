@@ -1,0 +1,15 @@
+Lab 5 — ข้อมูลไม่มีโครงสร้างและ NoSQL
+=====================================
+
+1. cd Lab\Lab-5
+2. python setup_lab.py
+3. Lab 5.1 — ทำ Lab5-1_data_types_worksheet.md
+4. Lab 5.2 — python Lab5-2_json\json_basics.py
+           python Lab5-2_json\flatten_nested.py
+           python Lab5-2_json\json_to_sqlite.py
+5. Lab 5.3 — python Lab5-3_mongodb\products_crud.py
+           python Lab5-3_mongodb\accidents_to_mongo.py
+   (MongoDB: mongodb://localhost:27017/ หรือใช้โหมดออฟไลน์อัตโนมัติ)
+6. Lab 5.4 — python Lab5-4_pipeline\dashboard_pipeline.py
+
+pip install pandas pymongo

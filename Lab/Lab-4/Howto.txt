@@ -1,0 +1,29 @@
+Lab หน่วยที่ 4 — ความปลอดภัยและการจัดการความเสี่ยงของข้อมูล
+================================================================
+
+สิ่งที่สร้าง
+------------
+Lab 4.1  CIA Triad + PDPA worksheet
+Lab 4.2  GRANT/REVOKE (MySQL) + Access Control (SQLite)
+Lab 4.3  Risk Matrix template + calculator
+Lab 4.4  Hash, SQL Injection, Audit Log, Backup
+
+วิธีรัน
+-------
+cd C:\Users\ADMIN\Documents\GitHub\Bigdata-2026\Lab\Lab-4
+python setup_lab.py
+
+Workshop หลัก
+  python Lab4-4_security_tech/workshop_4_4.py
+  python Lab4-2_access_control/access_control.py
+  python Lab4-3_risk_analysis/risk_calculator.py
+
+MySQL (ถ้ามี Server)
+  รัน Lab4-2_access_control/mysql_grants.sql
+
+ไฟล์ output/
+  school_security.db  — users, grades, audit_log
+  road_accidents.db   — ทดสอบ injection ปลอดภัย
+  backups/            — สำรองอัตโนมัติ
+
+คู่มือเต็ม: Lab/Lab-4/README.md
