@@ -91,5 +91,5 @@ Lab/Lab-3/
 
 ## เงื่อนไขก่อนเริ่ม
 
-- ควรมี `road_accidents.db` จาก Lab 1 หรือ Lab 2 (หรือ CSV ใน `data/`)
+- ควรมี `road_accidents.db` จาก Lab 1 หรือ Lab 2 (หรือ `data/thailand_road_accidents_2568_fix.csv`)
 - `setup_lab.py` สร้าง `dirty_records` อัตโนมัติ

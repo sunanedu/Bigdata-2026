@@ -95,14 +95,14 @@ JOIN products p ON oi.product_id = p.product_id;
 
 1. New Database → `road_accidents.db`
 2. File → Import → Table from CSV
-3. เลือก `thailand_road_accidents_2568.csv` (วางไว้ที่ `data/` ใน repo)
+3. เลือก `thailand_road_accidents_2568_fix.csv` (วางไว้ที่ `data/` ใน repo)
 4. ชื่อตาราง: `road_accidents`, Encoding UTF-8, แถวแรกเป็นชื่อคอลัมน์
 
 ### วิธี B: Python
 
 ```powershell
 # ถ้ามี CSV ชุดเต็ม (~20,000 แถว)
-python Lab1-4_csv_import/import_road_accidents.py --csv ..\..\data\thailand_road_accidents_2568.csv
+python Lab1-4_csv_import/import_road_accidents.py --csv ..\..\data\thailand_road_accidents_2568_fix.csv
 
 # ถ้ายังไม่มี CSV — ใช้ตัวอย่างจาก data/school_data.db
 python Lab1-4_csv_import/import_road_accidents.py --from-school-db
@@ -124,7 +124,7 @@ python Lab1-4_csv_import/import_road_accidents.py --from-school-db
 | `students.csv` | `Lab/Lab-1/data/` |
 | `products.csv` | `Lab/Lab-1/data/` |
 | `school_data.db` | `data/` (ข้อมูลอุบัติเหตุตัวอย่าง) |
-| `thailand_road_accidents_2568.csv` | วางที่ `data/` (แฟลชไดร์ฟหลักสูตร) |
+| `thailand_road_accidents_2568_fix.csv` | วางที่ `data/` (ชื่อ จังหวัด/อำเภอ/ตำบล แก้แล้ว, 52 คอลัมน์) |
 
 ---
 

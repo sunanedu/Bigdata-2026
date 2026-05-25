@@ -13,7 +13,7 @@ LAB_ROOT = Path(__file__).resolve().parent
 OUTPUT = LAB_ROOT / "output"
 REPO_ROOT = LAB_ROOT.parents[1]
 LAB1_OUTPUT = LAB_ROOT.parent / "Lab-1" / "output" / "road_accidents.db"
-CSV_PATH = REPO_ROOT / "data" / "thailand_road_accidents_2568.csv"
+CSV_PATH = REPO_ROOT / "data" / "thailand_road_accidents_2568_fix.csv"
 
 
 def run_script(conn: sqlite3.Connection, path: Path) -> None:

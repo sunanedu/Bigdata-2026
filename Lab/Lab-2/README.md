@@ -98,5 +98,5 @@ Lab/Lab-2/
 
 ## เงื่อนไขก่อนเริ่ม
 
-- ควรทำ Lab 1 แล้ว (มี `road_accidents.db`) หรือมี `data/thailand_road_accidents_2568.csv`
+- ควรทำ Lab 1 แล้ว (มี `road_accidents.db`) หรือมี `data/thailand_road_accidents_2568_fix.csv`
 - `setup_lab.py` จะคัดลอกจาก Lab-1 หรือ import CSV อัตโนมัติ

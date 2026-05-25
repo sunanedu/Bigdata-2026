@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Lab 1.4 — นำเข้า thailand_road_accidents_2568.csv เข้า SQLite
+Lab 1.4 — นำเข้า thailand_road_accidents_2568_fix.csv เข้า SQLite
 
 วิธีใช้:
   python import_road_accidents.py
-  python import_road_accidents.py --csv "D:/BigData/thailand_road_accidents_2568.csv"
+  python import_road_accidents.py --csv "D:/BigData/thailand_road_accidents_2568_fix.csv"
   python import_road_accidents.py --from-school-db
 
 ถ้าไม่มีไฟล์ CSV จะคัดลอกจาก data/school_data.db (ตัวอย่าง 5,000 แถว)
@@ -21,7 +21,7 @@ from pathlib import Path
 
 LAB_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = LAB_ROOT.parents[1]
-DEFAULT_CSV = REPO_ROOT / "data" / "thailand_road_accidents_2568.csv"
+DEFAULT_CSV = REPO_ROOT / "data" / "thailand_road_accidents_2568_fix.csv"
 SCHOOL_DB = REPO_ROOT / "data" / "school_data.db"
 OUTPUT_DB = LAB_ROOT / "output" / "road_accidents.db"
 TABLE = "road_accidents"
@@ -95,7 +95,7 @@ def main() -> int:
         "--csv",
         type=Path,
         default=DEFAULT_CSV,
-        help="path ไปยัง thailand_road_accidents_2568.csv",
+        help="path ไปยัง thailand_road_accidents_2568_fix.csv",
     )
     parser.add_argument(
         "--output",

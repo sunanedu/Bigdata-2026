@@ -18,7 +18,7 @@ LAB_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FILES = [
     LAB_ROOT / "output" / "road_accidents_cleaned.csv",
     LAB_ROOT / "data" / "dirty_records.csv",
-    LAB_ROOT.parent.parent / "data" / "thailand_road_accidents_2568.csv",
+    LAB_ROOT.parent.parent / "data" / "thailand_road_accidents_2568_fix.csv",
 ]
 
 

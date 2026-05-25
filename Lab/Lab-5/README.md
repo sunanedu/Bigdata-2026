@@ -26,5 +26,5 @@ pip install pandas pymongo
 ## หมายเหตุ
 
 - **MongoDB**: ถ้าไม่ติดตั้ง สคริปต์ใช้ `output/mongo_collections/*.json` แทน
-- ข้อมูล API 50 รายการสร้างจาก `data/thailand_road_accidents_2568.csv`
+- ข้อมูล API 50 รายการสร้างจาก `data/thailand_road_accidents_2568_fix.csv`
 - Pipeline 5.4 ใช้ CSV จริง ~20,000 แถว

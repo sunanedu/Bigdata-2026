@@ -19,7 +19,7 @@ python setup_lab.py
 my_first_database.db — ตาราง students (5 แถวตัวอย่าง)
 shop_database.db — customers, products, orders, order_items
 school_system.db — students + subjects + enrollments (เตรียมหน่วยที่ 2)
-road_accidents.db — 20,000 แถว จาก data/thailand_road_accidents_2568.csv (ตรงกับเอกสาร: ผู้เสียชีวิต 471, ผู้บาดเจ็บ 20,573)
+road_accidents.db — 20,000 แถว จาก data/thailand_road_accidents_2568_fix.csv (ชื่อภูมิศาสตร์แก้แล้ว + คอลัมน์ตำบล)
 เปิดด้วย DB Browser for SQLite หรือรัน SQL ใน Lab1-4_csv_import/verify.sql
 
 โครงสร้าง

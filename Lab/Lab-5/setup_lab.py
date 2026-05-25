@@ -15,7 +15,7 @@ LAB_ROOT = Path(__file__).resolve().parent
 DATA = LAB_ROOT / "data"
 OUTPUT = LAB_ROOT / "output"
 REPO_ROOT = LAB_ROOT.parents[1]
-CSV_PATH = REPO_ROOT / "data" / "thailand_road_accidents_2568.csv"
+CSV_PATH = REPO_ROOT / "data" / "thailand_road_accidents_2568_fix.csv"
 ROAD_SOURCES = [
     LAB_ROOT.parent / "Lab-2" / "output" / "road_accidents.db",
     LAB_ROOT.parent / "Lab-3" / "output" / "road_accidents.db",

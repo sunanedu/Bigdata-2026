@@ -18,10 +18,11 @@ STATIC = MINI / "static"
 REPO_ROOT = LAB_ROOT.parents[1]
 JOIN = LAB_ROOT.parent / "Lab-2" / "Lab2-3_join"
 ROAD_SOURCES = [
-    LAB_ROOT.parent / "Lab-2" / "output" / "road_accidents.db",
-    LAB_ROOT.parent / "Lab-3" / "output" / "road_accidents.db",
     LAB_ROOT.parent / "Lab-1" / "output" / "road_accidents.db",
+    LAB_ROOT.parent / "Lab-3" / "output" / "road_accidents.db",
+    LAB_ROOT.parent / "Lab-2" / "output" / "road_accidents.db",
 ]
+FIX_CSV = REPO_ROOT / "data" / "thailand_road_accidents_2568_fix.csv"
 CHART_URL = "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
 
 
@@ -42,15 +43,32 @@ def run_sql(conn: sqlite3.Connection, path: Path) -> None:
     conn.executescript(path.read_text(encoding="utf-8"))
 
 
+def _road_db_has_fix_schema(path: Path) -> bool:
+    conn = sqlite3.connect(path)
+    try:
+        cols = {
+            r[1]
+            for r in conn.execute("PRAGMA table_info(road_accidents)").fetchall()
+        }
+        return "ตำบล" in cols
+    finally:
+        conn.close()
+
+
 def find_road_db() -> Path | None:
+    """เลือก DB ที่มีคอลัมน์ตำบล (ชุด _fix) ก่อน ไม่งั้นใช้ตัวแรกที่พบ"""
+    fallback: Path | None = None
     for p in ROAD_SOURCES:
-        if p.is_file():
+        if not p.is_file():
+            continue
+        if _road_db_has_fix_schema(p):
             return p
-    return None
+        fallback = fallback or p
+    return fallback
 
 
 def import_road_from_csv(dest: Path) -> bool:
-    csv_path = REPO_ROOT / "data" / "thailand_road_accidents_2568.csv"
+    csv_path = REPO_ROOT / "data" / "thailand_road_accidents_2568_fix.csv"
     if not csv_path.is_file():
         return False
     mod_path = REPO_ROOT / "Lab" / "Lab-1" / "Lab1-4_csv_import" / "import_road_accidents.py"
@@ -84,10 +102,16 @@ def build_school_data_db() -> Path:
         dest.unlink()
 
     road = find_road_db()
-    if road:
+    if road and _road_db_has_fix_schema(road):
         shutil.copy2(road, dest)
-    elif not import_road_from_csv(dest):
-        raise FileNotFoundError("ไม่พบ road_accidents — รัน Lab-1/2 setup ก่อน")
+        log(f"  road_accidents จาก {road.parent.parent.name}/output")
+    elif FIX_CSV.is_file() and import_road_from_csv(dest):
+        log(f"  road_accidents นำเข้าจาก {FIX_CSV.name}")
+    elif road:
+        shutil.copy2(road, dest)
+        log(f"  WARNING: ใช้ DB เก่า (ไม่มีตำบล) — รัน Lab-1 setup_lab.py แล้ว setup ใหม่")
+    else:
+        raise FileNotFoundError("ไม่พบ road_accidents — รัน Lab-1 setup หรือวาง CSV ที่ data/")
 
     conn = sqlite3.connect(dest)
     try:

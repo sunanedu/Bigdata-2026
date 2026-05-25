@@ -71,7 +71,7 @@ def ensure_road_accidents() -> Path | None:
         if src.is_file():
             shutil.copy2(src, dest)
             return dest
-    csv_path = REPO_ROOT / "data" / "thailand_road_accidents_2568.csv"
+    csv_path = REPO_ROOT / "data" / "thailand_road_accidents_2568_fix.csv"
     if csv_path.is_file():
         mod_path = REPO_ROOT / "Lab" / "Lab-1" / "Lab1-4_csv_import" / "import_road_accidents.py"
         spec = importlib.util.spec_from_file_location("imp", mod_path)

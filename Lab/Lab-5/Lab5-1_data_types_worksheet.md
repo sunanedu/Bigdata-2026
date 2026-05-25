@@ -2,7 +2,7 @@
 
 | ประเภท | ตัวอย่างใน Lab/ชีวิตจริง | เครื่องมือที่เหมาะ |
 |--------|-------------------------|-------------------|
-| Structured | `thailand_road_accidents_2568.csv` | SQL, Pandas |
+| Structured | `thailand_road_accidents_2568_fix.csv` | SQL, Pandas |
 | Semi-structured | `sample_api_data.json` | JSON, MongoDB |
 | Unstructured | รูปกล้องวงจรปิด, รายงานตำรวจ | AI, NLP |
 

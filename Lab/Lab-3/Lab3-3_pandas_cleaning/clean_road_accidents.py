@@ -13,7 +13,7 @@ from pathlib import Path
 
 LAB_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = LAB_ROOT.parents[1]
-CSV_PATH = REPO_ROOT / "data" / "thailand_road_accidents_2568.csv"
+CSV_PATH = REPO_ROOT / "data" / "thailand_road_accidents_2568_fix.csv"
 DB_PATH = LAB_ROOT / "output" / "road_accidents.db"
 OUT_DIR = LAB_ROOT / "output"
 CLEAN_CSV = OUT_DIR / "road_accidents_cleaned.csv"
