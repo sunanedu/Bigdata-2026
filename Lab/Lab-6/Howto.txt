@@ -2,26 +2,26 @@ Lab 6 — Mini Project Dashboard HTML
 =====================================
 
 1. cd Lab\Lab-6
-2. python setup_lab.py
-3. pip install flask
+2. $env:PYTHONIOENCODING='utf-8'    (Windows — ถ้า setup ขึ้น encoding error)
+3. python setup_lab.py
+4. pip install -r requirements.txt
 
-Lab 6.1 — ทำ Lab6-1_architecture\architecture_worksheet.md (วาด Wireframe)
+Lab 6.1 — Lab6-1_architecture\architecture_worksheet.md
 
 Lab 6.2 — Flask เบื้องต้น:
-  python Lab6-2_flask\hello_flask.py     → http://127.0.0.1:5001
+  python Lab6-2_flask\hello_flask.py     -> http://127.0.0.1:5001
 
-Lab 6.3–6.4 — Mini Project (Dashboard เต็ม):
+Lab 6.3-6.4 — Mini Project:
   cd Lab6-mini_project
-  python app.py                          → http://127.0.0.1:5000
+  python app.py
+  เปิด URL ที่ Terminal แสดง (มัก http://127.0.0.1:5050 บน Windows)
 
-ทดสอบ API ไม่เปิดเบราว์เซอร์:
+ทดสอบ API:
   python Lab6-2_flask\test_api.py
 
-Lab 6.5 — เตรียมนำเสนอ:
-  Lab6-5_presentation\presentation_outline.md
-  Lab6-5_presentation\rubric_checklist.md
+Lab 6.5 — Lab6-5_presentation\
 
-หมายเหตุ:
-  - school_data.db มี road_accidents + students/subjects/enrollments
-  - ถ้าไม่มี chart.min.js ให้รัน setup_lab.py อีกครั้ง (ต้องมีอินเทอร์เน็ต)
-    หรือคัดลอกจากแฟลชไดร์ฟไป Lab6-mini_project\static\
+ปัญหาที่พบบ่อย: อ่าน TROUBLESHOOTING.md
+- พอร์ต 5000 ถูก Windows จอง -> ใช้ 5050 อัตโนมัติ
+- คอลัมน์ SQL: ประเภทยานพาหนะหลัก, จำนวนผู้บาดเจ็บ
+- กราฟใหญ่เกิน -> แก้ใน Lab แล้ว (chart-canvas-wrap)

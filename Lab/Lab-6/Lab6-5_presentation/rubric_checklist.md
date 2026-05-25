@@ -20,5 +20,6 @@
 
 ## ไฟล์
 - [ ] `python setup_lab.py` สำเร็จ
-- [ ] `python app.py` เปิด Dashboard ได้
+- [ ] `python app.py` เปิด Dashboard ได้ (ดูพอร์ตใน Terminal — อาจเป็น 5050)
 - [ ] `chart.min.js` อยู่ใน `static/`
+- [ ] กราฟ Doughnut + Line อยู่คู่กัน ไม่สูงเต็มหน้า

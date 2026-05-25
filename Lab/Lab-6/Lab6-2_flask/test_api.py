@@ -20,11 +20,16 @@ def main() -> int:
 
     client = app.test_client()
     endpoints = [
+        "/api/meta",
         "/api/summary",
         "/api/by-province",
+        "/api/by-region",
         "/api/monthly",
         "/api/vehicle-type",
-        "/api/recent",
+        "/api/severity",
+        "/api/by-road-type",
+        "/api/by-time-slot",
+        "/api/accidents?limit=10",
         "/api/search?province=เชียงใหม่",
     ]
     print("ทดสอบ API:\n")

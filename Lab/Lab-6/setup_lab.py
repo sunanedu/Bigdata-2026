@@ -25,6 +25,19 @@ ROAD_SOURCES = [
 CHART_URL = "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
 
 
+def _configure_stdout() -> None:
+    """หลีกเลี่ยง UnicodeEncodeError บน Windows Terminal (cp1252)"""
+    if hasattr(sys.stdout, "reconfigure"):
+        try:
+            sys.stdout.reconfigure(encoding="utf-8")
+        except Exception:
+            pass
+
+
+def log(msg: str) -> None:
+    print(msg)
+
+
 def run_sql(conn: sqlite3.Connection, path: Path) -> None:
     conn.executescript(path.read_text(encoding="utf-8"))
 
@@ -94,8 +107,8 @@ def download_chart_js() -> Path | None:
         urllib.request.urlretrieve(CHART_URL, target)
         return target
     except Exception as exc:
-        print(f"  คำเตือน: ดาวน์โหลด Chart.js ไม่สำเร็จ ({exc})")
-        print("  คัดลอก chart.min.js จากแฟลชไดร์ฟไปที่ Lab6-mini_project/static/")
+        log(f"  WARNING: download Chart.js failed ({exc})")
+        log("  Copy chart.min.js to Lab6-mini_project/static/ from flash drive")
         return None
 
 
@@ -104,6 +117,7 @@ def deploy_to_mini_project(db: Path) -> None:
 
 
 def main() -> int:
+    _configure_stdout()
     MINI.mkdir(parents=True, exist_ok=True)
     db = build_school_data_db()
     deploy_to_mini_project(db)
@@ -119,16 +133,18 @@ def main() -> int:
     n_road = conn.execute("SELECT COUNT(*) FROM road_accidents").fetchone()[0]
     conn.close()
 
-    print("เตรียม Lab 6 สำเร็จ:\n")
-    print(f"  output/school_data.db — {n_road:,} แถว road_accidents")
-    print(f"  ตาราง: {', '.join(tables)}")
-    print(f"  Lab6-mini_project/school_data.db")
+    log("Lab 6 setup OK:\n")
+    log(f"  output/school_data.db — {n_road:,} rows road_accidents")
+    log(f"  tables: {', '.join(tables)}")
+    log("  Lab6-mini_project/school_data.db")
     if chart:
-        print(f"  {chart.relative_to(LAB_ROOT)}")
-    print("\nขั้นตอนถัดไป:")
-    print("  pip install flask")
-    print("  python Lab6-2_flask/hello_flask.py")
-    print("  cd Lab6-mini_project && python app.py")
+        log(f"  {chart.relative_to(LAB_ROOT)}")
+    log("\nNext:")
+    log("  pip install flask")
+    log("  cd Lab6-mini_project")
+    log("  python app.py")
+    log("  (Windows: if port 5000 busy, app uses 5050 — see URL in terminal)")
+    log("\nSee TROUBLESHOOTING.md for common issues.")
     return 0
 
 
